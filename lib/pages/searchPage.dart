@@ -10,6 +10,33 @@ class SearchPage extends StatefulWidget {
 class _SearchPageState extends State<SearchPage> {
   @override
   Widget build(BuildContext context) {
-    return const Scaffold();
+    return Scaffold(
+      backgroundColor:Colors.white,
+      appBar:
+      PreferredSize(
+        preferredSize: const Size.fromHeight(kToolbarHeight + 50.0),
+        child: AppBar(
+
+          leading: IconButton(
+            icon: const Icon(Icons.arrow_back),
+            onPressed: () {
+                setState(() {
+
+                });
+            },
+          ),
+          title: const Text('         SEARCH RECIPES',
+              style: TextStyle(
+                fontWeight: FontWeight.bold,
+              )
+          ),
+        ),
+      ),
+      body: const Column(
+        children: [
+
+        ],
+      ),
+      );
   }
 }

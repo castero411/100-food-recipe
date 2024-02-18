@@ -29,6 +29,7 @@ class _SearchPageState extends State<SearchPage> {
           title: const Text('Search recipe',
               style: TextStyle(
                 fontWeight: FontWeight.bold,
+
               )
           ),
           centerTitle: true,

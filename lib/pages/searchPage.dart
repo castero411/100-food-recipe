@@ -10,6 +10,39 @@ class SearchPage extends StatefulWidget {
 class _SearchPageState extends State<SearchPage> {
   @override
   Widget build(BuildContext context) {
-    return const Scaffold();
+    var screenWidth = MediaQuery.of(context).size.width;
+    return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.white,
+        title: const Text("Search recipes",
+        style: TextStyle(fontWeight: FontWeight.bold
+        ),
+        ),
+        centerTitle: true,
+        leading: IconButton(onPressed: (){},
+            icon: const Icon(Icons.arrow_back
+          )
+        ),
+      ),
+      backgroundColor: Colors.white,
+      body:Column(
+        children: [
+          SizedBox(width: screenWidth,),
+          const Row(
+            children: [
+                SearchBar(),
+                SizedBox(width: 25,
+                  height: 25,
+                  child: FloatingActionButton(onPressed:null,
+                    backgroundColor: Colors.greenAccent,
+                    child: Icon(Icons.search),
+                  ),
+                )
+                
+            ],
+          )
+        ],
+      ),
+    );
   }
 }

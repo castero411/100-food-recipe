@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:slide_switcher/slide_switcher.dart';
 
 class SearchPage extends StatefulWidget {
   const SearchPage({super.key});
@@ -10,6 +11,7 @@ class SearchPage extends StatefulWidget {
 class _SearchPageState extends State<SearchPage> {
   @override
   Widget build(BuildContext context) {
+
     var screenWidth = MediaQuery.of(context).size.width;
     return Scaffold(
       appBar: AppBar(
@@ -28,6 +30,17 @@ class _SearchPageState extends State<SearchPage> {
       body:Column(
         children: [
           SizedBox(width: screenWidth,),
+          SlideSwitcher( containerHeight: 40,
+              containerWight: 350,
+              onSelect: (index)=>(){},
+            children:
+            const [
+              Text("Name"),
+              Text("Ingredients"),
+              Text("Region"),
+              Text("Category")
+            ],
+          ),
           const Row(
             children: [
                 SearchBar(),
@@ -44,5 +57,6 @@ class _SearchPageState extends State<SearchPage> {
         ],
       ),
     );
+
   }
 }

@@ -28,10 +28,13 @@ class _SearchPageState extends State<SearchPage> {
       ),
       backgroundColor: Colors.white,
       body:Column(
+        mainAxisAlignment: MainAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           SizedBox(width: screenWidth,),
-          SlideSwitcher( containerHeight: 40,
-              containerWight: 350,
+          SlideSwitcher(
+              containerHeight: 40,
+              containerWight: 0,
               onSelect: (index)=>(){},
             children:
             const [
@@ -53,7 +56,53 @@ class _SearchPageState extends State<SearchPage> {
                 )
                 
             ],
+          ),
+          GridView.count(
+            crossAxisCount: 2,
+            children: [
+              Container(
+                width: 25,
+                height: 25,
+                color: Colors.greenAccent,
+              ),
+              Container(
+                width: 25,
+                height: 25,
+                color: Colors.greenAccent,
+              ),
+              Container(
+                width: 25,
+                height: 25,
+                color: Colors.greenAccent,
+              ),
+              Container(
+                width: 25,
+                height: 25,
+                color: Colors.greenAccent,
+              ),
+              Container(
+                width: 25,
+                height: 25,
+                color: Colors.greenAccent,
+              ),
+              Container(
+                width: 25,
+                height: 25,
+                color: Colors.greenAccent,
+              ),
+              Container(
+                width: 25,
+                height: 25,
+                color: Colors.greenAccent,
+              ),
+              Container(
+                width: 25,
+                height: 25,
+                color: Colors.greenAccent,
+              ),
+            ],
           )
+
         ],
       ),
     );

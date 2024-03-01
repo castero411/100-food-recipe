@@ -1,7 +1,8 @@
 import 'dart:ffi';
 import 'package:flutter/material.dart';
-import 'package:food_recipe/pages/splashScreen.dart';
-import 'package:food_recipe/pages/searchPage.dart';
+import 'package:food_recipe/Team1-pages/SignIn.dart';
+import 'package:food_recipe/Team2-pages/splashScreen.dart';
+import 'package:food_recipe/Team2-pages/searchPage.dart';
 
 
 void main() {
@@ -16,7 +17,7 @@ class MyApp extends StatelessWidget {
     return const MaterialApp(
 
       debugShowCheckedModeBanner: false,
-      home: SearchPage(),
+      home: SignIn(),
 
     );
   }

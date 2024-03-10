@@ -1,4 +1,8 @@
+import 'dart:ui';
+
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/painting.dart';
 import 'package:slide_switcher/slide_switcher.dart';
 
 class SearchPage extends StatefulWidget {
@@ -27,85 +31,55 @@ class _SearchPageState extends State<SearchPage> {
         ),
       ),
       backgroundColor: Colors.white,
-      body:SingleChildScrollView(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            SizedBox(width: screenWidth,),
-            SlideSwitcher(
-                containerHeight: 40,
-                containerWight: 0,
-                onSelect: (index)=>(){},
-              children:
-              const [
-                Text("Name"),
-                Text("Ingredients"),
-                Text("Region"),
-                Text("Category")
-              ],
-            ),
-            const Row(
-              children: [
-                  SearchBar(),
-                  SizedBox(width: 25,
-                    height: 25,
-                    child: FloatingActionButton(onPressed:null,
-                      backgroundColor: Colors.greenAccent,
-                      child: Icon(Icons.search),
+      body: Column(
+        crossAxisAlignment:CrossAxisAlignment.start ,
+        children: [
+          SlideSwitcher(
+            onSelect: (index) => setState(() => {}),
+            containerHeight: 40,
+            containerWight: screenWidth,
+            slidersColors: const[
+              Colors.green
+            ],
+            children: const [
+              Text("Name",style: TextStyle(color: Colors.white),),
+              Text("Ingredient",style: TextStyle(color: Colors.white),),
+              Text("Region",style: TextStyle(color: Colors.white),),
+              Text("Category",style: TextStyle(color: Colors.white),),
+            ],
+          ),
+          const SizedBox(height: 25,),
+           Row(
+            children: [
+              const SizedBox(width: 320,
+                child: Padding(
+                  padding: EdgeInsets.only(left: 15),
+                  child: SearchBar(
+                    hintText: "search recipe",
+                    leading: Icon(Icons.search,
+                      color: Colors.green,
                     ),
-                  )
-                  
-              ],
-            ),
-            GridView.count(
-              crossAxisCount: 2,
-              children: [
-                Container(
-                  width: 25,
-                  height: 25,
-                  color: Colors.greenAccent,
+                  ),
                 ),
-                Container(
-                  width: 25,
-                  height: 25,
-                  color: Colors.greenAccent,
-                ),
-                Container(
-                  width: 25,
-                  height: 25,
-                  color: Colors.greenAccent,
-                ),
-                Container(
-                  width: 25,
-                  height: 25,
-                  color: Colors.greenAccent,
-                ),
-                Container(
-                  width: 25,
-                  height: 25,
-                  color: Colors.greenAccent,
-                ),
-                Container(
-                  width: 25,
-                  height: 25,
-                  color: Colors.greenAccent,
-                ),
-                Container(
-                  width: 25,
-                  height: 25,
-                  color: Colors.greenAccent,
-                ),
-                Container(
-                  width: 25,
-                  height: 25,
-                  color: Colors.greenAccent,
-                ),
-              ],
-            )
-        
-          ],
-        ),
+              ),
+              const SizedBox(width: 5,),
+              IconButton(onPressed: () {
+                print("icon button pressed");
+              },
+                  icon: const Icon(Icons.search,
+                    color: Colors.green,
+                  ),
+              )
+            ],
+          ),
+          const SizedBox(height: 25,),
+          const Text("   Recent Search", style: TextStyle(
+              fontWeight: FontWeight.bold,
+              fontSize: 25,
+          ),
+          ),
+          const SizedBox(height: 25,),
+        ],
       ),
     );
 

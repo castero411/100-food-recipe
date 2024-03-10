@@ -27,83 +27,85 @@ class _SearchPageState extends State<SearchPage> {
         ),
       ),
       backgroundColor: Colors.white,
-      body:Column(
-        mainAxisAlignment: MainAxisAlignment.start,
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          SizedBox(width: screenWidth,),
-          SlideSwitcher(
-              containerHeight: 40,
-              containerWight: 0,
-              onSelect: (index)=>(){},
-            children:
-            const [
-              Text("Name"),
-              Text("Ingredients"),
-              Text("Region"),
-              Text("Category")
-            ],
-          ),
-          const Row(
-            children: [
-                SearchBar(),
-                SizedBox(width: 25,
+      body:SingleChildScrollView(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            SizedBox(width: screenWidth,),
+            SlideSwitcher(
+                containerHeight: 40,
+                containerWight: 0,
+                onSelect: (index)=>(){},
+              children:
+              const [
+                Text("Name"),
+                Text("Ingredients"),
+                Text("Region"),
+                Text("Category")
+              ],
+            ),
+            const Row(
+              children: [
+                  SearchBar(),
+                  SizedBox(width: 25,
+                    height: 25,
+                    child: FloatingActionButton(onPressed:null,
+                      backgroundColor: Colors.greenAccent,
+                      child: Icon(Icons.search),
+                    ),
+                  )
+                  
+              ],
+            ),
+            GridView.count(
+              crossAxisCount: 2,
+              children: [
+                Container(
+                  width: 25,
                   height: 25,
-                  child: FloatingActionButton(onPressed:null,
-                    backgroundColor: Colors.greenAccent,
-                    child: Icon(Icons.search),
-                  ),
-                )
-                
-            ],
-          ),
-          GridView.count(
-            crossAxisCount: 2,
-            children: [
-              Container(
-                width: 25,
-                height: 25,
-                color: Colors.greenAccent,
-              ),
-              Container(
-                width: 25,
-                height: 25,
-                color: Colors.greenAccent,
-              ),
-              Container(
-                width: 25,
-                height: 25,
-                color: Colors.greenAccent,
-              ),
-              Container(
-                width: 25,
-                height: 25,
-                color: Colors.greenAccent,
-              ),
-              Container(
-                width: 25,
-                height: 25,
-                color: Colors.greenAccent,
-              ),
-              Container(
-                width: 25,
-                height: 25,
-                color: Colors.greenAccent,
-              ),
-              Container(
-                width: 25,
-                height: 25,
-                color: Colors.greenAccent,
-              ),
-              Container(
-                width: 25,
-                height: 25,
-                color: Colors.greenAccent,
-              ),
-            ],
-          )
-
-        ],
+                  color: Colors.greenAccent,
+                ),
+                Container(
+                  width: 25,
+                  height: 25,
+                  color: Colors.greenAccent,
+                ),
+                Container(
+                  width: 25,
+                  height: 25,
+                  color: Colors.greenAccent,
+                ),
+                Container(
+                  width: 25,
+                  height: 25,
+                  color: Colors.greenAccent,
+                ),
+                Container(
+                  width: 25,
+                  height: 25,
+                  color: Colors.greenAccent,
+                ),
+                Container(
+                  width: 25,
+                  height: 25,
+                  color: Colors.greenAccent,
+                ),
+                Container(
+                  width: 25,
+                  height: 25,
+                  color: Colors.greenAccent,
+                ),
+                Container(
+                  width: 25,
+                  height: 25,
+                  color: Colors.greenAccent,
+                ),
+              ],
+            )
+        
+          ],
+        ),
       ),
     );
 

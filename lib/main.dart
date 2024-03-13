@@ -5,6 +5,8 @@ import 'package:food_recipe/Team1-pages/SignIn.dart';
 import 'package:food_recipe/Team2-pages/splashScreen.dart';
 import 'package:food_recipe/Team2-pages/searchPage.dart';
 
+import 'Team1-pages/SignUp.dart';
+
 
 void main() {
   runApp(const MyApp());
@@ -15,11 +17,17 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
 
       debugShowCheckedModeBanner: false,
       home: HomePage(),
 
-    );
+        routes: {
+
+          "/login":(context)=> const SignIn(),
+          "/homePage":(context)=> const HomePage(),
+          "/SignIn":(context) => const SignUp(),
+        }
+        );
   }
 }
